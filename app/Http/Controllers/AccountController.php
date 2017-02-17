@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Account;
 use App\Transaction;
 use Illuminate\Http\Request;
 
@@ -30,6 +31,14 @@ class AccountController extends Controller
         $bank=Transaction::all();
         return view('Transaction.transaction',compact('bank'));
     }
+
+    public function store(Request $request)
+    {
+        $attribute=['account_name'=>$request->account_name,'account_type'=>$request->account_type,'account_no'=>$request->account_no];
+        $result=Account::create($attribute);
+        return redirect('/account');
+    }
+
 }
 
 ?>
