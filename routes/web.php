@@ -26,7 +26,9 @@ Route::get('/country/{id}','NepalController@nepal');
 Route::get('/account','AccountController@index');
 Route::get('/transactiondetail','AccountController@transaction');
 Route::post('/account','AccountController@store');
-
+Route::get('/account/delete/{id}','AccountController@delete');
+Route::get('/account/edit/{id}','AccountController@edit');
+Route::post('/account/edit/{id}','AccountController@update');
 ?>
 
 

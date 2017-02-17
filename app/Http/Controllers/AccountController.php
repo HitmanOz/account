@@ -26,11 +26,7 @@ class AccountController extends Controller
         $accounts=Account::all();
         return view('Account.display',compact('accounts'));
     }
-    public function transaction()
-    {
-        $bank=Transaction::all();
-        return view('Transaction.transaction',compact('bank'));
-    }
+
 
     public function store(Request $request)
     {
@@ -38,7 +34,25 @@ class AccountController extends Controller
         $result=Account::create($attribute);
         return redirect('/account');
     }
+    public function delete($id)
+    {
+        $account=Account::find($id);
+        $account->delete();
+        return redirect('/account');
+    }
+     public function edit($id)
+     {
+         $account_edit=Account::findorFail($id);
+         $accounts=Account::all();
+         return view('Account.display',compact('accounts','account_edit'));
 
+     }
+     public function update($id,Request $request)
+     {
+         $attribute=['account_name'=>$request->account_name,'account_type'=>$request->account_type,'account_no'=>$request->account_no];
+         $result=Account::where('id',$id)->update($attribute);
+         return redirect('/account');
+     }
 }
 
 ?>
