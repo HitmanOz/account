@@ -28,8 +28,8 @@ class TransactionController extends Controller
     Public function rewrite($id)
     {
         $action_edit=Transaction::findorFail($id);
-        $action=Transaction::all();
-        return view('Transaction.transactiondetail',compact('action','action_edit'));
+        $bank=Transaction::all();
+        return view('Transaction.transactiondetail',compact('bank','action_edit'));
     }
     Public function load($id,Request $apply)
     {

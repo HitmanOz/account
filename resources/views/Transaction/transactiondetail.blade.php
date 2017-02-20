@@ -1,6 +1,9 @@
-<html>
-<head></head>
-<body>
+@extends('Command.layout')
+@section('content')
+    @section('jumbotron')
+        This is Transaction Table.
+        @endsection
+
 <table border="2">
     <thead>
 
@@ -60,6 +63,4 @@
     </tbody>
 </table>
 
-</body>
-
-</html>
+@endsection

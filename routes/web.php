@@ -31,8 +31,8 @@ Route::post('/account/edit/{id}','AccountController@update');
 Route::get('/transactiondetail','TransactionController@transaction');
 Route::post('/transactiondetail','TransactionController@insert');
 Route::get('/transactiondetail/delete/{id}','TransactionController@remove');
-Route::get('/transactiondetail/edit{id}','TransactionController@rewrite');
-Route::post('/transactiondetail/edit{id}','TransactionController@load');
+Route::get('/transactiondetail/edit/{id}','TransactionController@rewrite');
+Route::post('/transactiondetail/edit/{id}','TransactionController@load');
 
 
 
